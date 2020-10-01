@@ -1,0 +1,23 @@
+#include<iostream>
+
+class AreaOfRectangle {
+    int height, length;
+public:
+    void get() {
+        std::cout << "Enter the height : ";
+        std::cin >> height;
+        std::cout << "Enter the length : ";
+        std::cin >> length;
+    }
+    friend float calculate(AreaOfRectangle ob);
+};
+
+float calculate(AreaOfRectangle ob) {     
+    return ob.length * ob.height;
+}
+
+int main() {
+    AreaOfRectangle object;
+    object.get();
+    std::cout<<"\nArea of Rectangle : "<<calculate(object);
+}
